@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 @objc public protocol bannerAdDelegate {
     @objc func receivedBannerAd(_ adURL: String)

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 @objc public protocol popupAdDelegate {
     @objc func receivedPopUpAd(_ adURL: String)

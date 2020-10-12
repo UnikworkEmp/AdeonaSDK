@@ -9,7 +9,6 @@
 import UIKit
 import AVKit
 import AVFoundation
-import Alamofire
 
 @objc public protocol videoAdDelegate {
     @objc func receivedVideoAd(_ adURL: String)

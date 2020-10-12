@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 @objc public protocol nativeAdDelegate {
     @objc func receivedNativeAd(_ adURL: String)

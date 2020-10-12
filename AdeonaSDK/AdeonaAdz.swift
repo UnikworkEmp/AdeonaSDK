@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 @objc public class AdeonaRequestError:NSObject {
     public var errorCode: Int?

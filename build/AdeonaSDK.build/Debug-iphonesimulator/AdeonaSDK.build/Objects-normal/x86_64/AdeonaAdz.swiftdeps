@@ -18,7 +18,11 @@ provides-dynamic-lookup:
 - "setAppId"
 - "setDeviceInformation"
 - "shared"
+- "urlSession"
 depends-top-level:
+- !private "!="
+- !private "&&"
+- !private "=="
 - !private "??"
 - "Adeona"
 - "AdeonaAdzProtocol"
@@ -26,37 +30,41 @@ depends-top-level:
 - "AssignmentPrecedence"
 - !private "Bundle"
 - !private "CastingPrecedence"
-- "DisabledEvaluator"
 - !private "FloatLiteralType"
 - "Int"
 - !private "IntegerLiteralType"
-- !private "JSONEncoding"
+- !private "JSONSerialization"
 - "NSObject"
-- "ServerTrustManager"
-- "Session"
+- !private "NSURLAuthenticationMethodServerTrust"
 - "String"
 - "StringLiteralType"
 - !private "UIDevice"
 - !private "UIScreen"
-- "URLSessionConfiguration"
+- !private "URL"
+- "URLAuthenticationChallenge"
+- "URLCredential"
+- !private "URLRequest"
+- "URLSession"
+- "URLSessionDelegate"
 - "Void"
 - !private "debugPrint"
 - !private "print"
 depends-member:
-- !private ["9Alamofire7AFErrorO", "errorDescription"]
-- !private ["9Alamofire7AFErrorO", "responseCode"]
 - ["9AdeonaSDK0A0C", "Adeona"]
 - ["9AdeonaSDK0A0C", "AdeonaAdzProtocol"]
 - ["9AdeonaSDK0A0C", "AdeonaRequestError"]
 - !private ["9AdeonaSDK0A0C", "Bundle"]
-- ["9AdeonaSDK0A0C", "DisabledEvaluator"]
-- !private ["9AdeonaSDK0A0C", "JSONEncoding"]
-- ["9AdeonaSDK0A0C", "ServerTrustManager"]
-- ["9AdeonaSDK0A0C", "Session"]
+- !private ["9AdeonaSDK0A0C", "JSONSerialization"]
+- !private ["9AdeonaSDK0A0C", "NSURLAuthenticationMethodServerTrust"]
 - ["9AdeonaSDK0A0C", "String"]
 - !private ["9AdeonaSDK0A0C", "UIDevice"]
 - !private ["9AdeonaSDK0A0C", "UIScreen"]
-- ["9AdeonaSDK0A0C", "URLSessionConfiguration"]
+- !private ["9AdeonaSDK0A0C", "URL"]
+- ["9AdeonaSDK0A0C", "URLAuthenticationChallenge"]
+- ["9AdeonaSDK0A0C", "URLCredential"]
+- !private ["9AdeonaSDK0A0C", "URLRequest"]
+- ["9AdeonaSDK0A0C", "URLSession"]
+- ["9AdeonaSDK0A0C", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["9AdeonaSDK0A0C", "Void"]
 - ["9AdeonaSDK0A0C", "appId"]
 - !private ["9AdeonaSDK0A0C", "debugPrint"]
@@ -74,20 +82,19 @@ depends-member:
 - ["9AdeonaSDK0A0C", "init"]
 - !private ["9AdeonaSDK0A0C", "print"]
 - ["9AdeonaSDK0A0C", "requestURL"]
-- !private ["9AdeonaSDK0A0C", "session"]
 - ["9AdeonaSDK0A0C", "setAppId"]
 - ["9AdeonaSDK0A0C", "setDeviceInformation"]
 - ["9AdeonaSDK0A0C", "shared"]
+- ["9AdeonaSDK0A0C", "urlSession"]
+- ["9AdeonaSDK0A0C", "urlSessionDidFinishEvents"]
 - ["9AdeonaSDK0A12RequestErrorC", "Int"]
 - ["9AdeonaSDK0A12RequestErrorC", "String"]
 - ["9AdeonaSDK0A12RequestErrorC", "deinit"]
 - ["9AdeonaSDK0A12RequestErrorC", "errorCode"]
 - ["9AdeonaSDK0A12RequestErrorC", "errorMessage"]
 - ["9AdeonaSDK0A12RequestErrorC", "init"]
-- ["9Alamofire0A8ExtendedP", "af"]
-- !private ["9Alamofire0A8ExtendedP", "fullVersion"]
-- !private ["9Alamofire0A8ExtendedP", "main"]
-- ["9Alamofire0A9ExtensionV", "default"]
+- !private ["So36NSURLSessionAuthChallengeDispositionV", "cancelAuthenticationChallenge"]
+- !private ["So36NSURLSessionAuthChallengeDispositionV", "useCredential"]
 - ["SK", "init"]
 - !private ["So8NSBundleC", "fullVersion"]
 - !private ["So8NSBundleC", "main"]
@@ -95,21 +102,27 @@ depends-member:
 - !private ["So6CGRectV", "width"]
 - ["s7CVarArgP", "Adeona"]
 - !private ["s7CVarArgP", "AdeonaRequestError"]
+- ["s7CVarArgP", "AuthChallengeDisposition"]
 - !private ["s7CVarArgP", "Bundle"]
-- ["s7CVarArgP", "DisabledEvaluator"]
-- !private ["s7CVarArgP", "JSONEncoding"]
-- ["s7CVarArgP", "ServerTrustManager"]
-- ["s7CVarArgP", "Session"]
+- !private ["s7CVarArgP", "JSONSerialization"]
+- !private ["s7CVarArgP", "NSURLAuthenticationMethodServerTrust"]
 - ["s7CVarArgP", "String"]
 - !private ["s7CVarArgP", "UIDevice"]
 - !private ["s7CVarArgP", "UIScreen"]
-- ["s7CVarArgP", "URLSessionConfiguration"]
+- !private ["s7CVarArgP", "URL"]
+- !private ["s7CVarArgP", "URLCredential"]
+- !private ["s7CVarArgP", "URLRequest"]
+- ["s7CVarArgP", "URLSession"]
+- ["s7CVarArgP", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["s7CVarArgP", ""]
-- ["s7CVarArgP", "af"]
 - !private ["s7CVarArgP", "appId"]
+- !private ["s7CVarArgP", "authenticationMethod"]
 - !private ["s7CVarArgP", "bounds"]
 - !private ["s7CVarArgP", "current"]
+- !private ["s7CVarArgP", "data"]
+- !private ["s7CVarArgP", "dataTask"]
 - !private ["s7CVarArgP", "debugPrint"]
+- !private ["s7CVarArgP", "default"]
 - !private ["s7CVarArgP", "deviceInfoDic"]
 - !private ["s7CVarArgP", "errorCode"]
 - !private ["s7CVarArgP", "errorMessage"]
@@ -120,35 +133,49 @@ depends-member:
 - !private ["s7CVarArgP", "getDeviceModel"]
 - !private ["s7CVarArgP", "getScreenHeight"]
 - !private ["s7CVarArgP", "getScreenWidth"]
+- !private ["s7CVarArgP", "host"]
 - !private ["s7CVarArgP", "identifierForVendor"]
 - ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "jsonObject"]
 - !private ["s7CVarArgP", "main"]
 - !private ["s7CVarArgP", "modelName"]
+- !private ["s7CVarArgP", "previousFailureCount"]
 - !private ["s7CVarArgP", "print"]
+- !private ["s7CVarArgP", "protectionSpace"]
 - !private ["s7CVarArgP", "requestURL"]
-- !private ["s7CVarArgP", "session"]
+- !private ["s7CVarArgP", "resume"]
+- !private ["s7CVarArgP", "sender"]
+- !private ["s7CVarArgP", "serverTrust"]
 - !private ["s7CVarArgP", "systemVersion"]
 - !private ["s7CVarArgP", "updateValue"]
+- ["s7CVarArgP", "urlSession"]
+- ["s7CVarArgP", "urlSessionDidFinishEvents"]
 - ["Sl", "init"]
 - !private ["Sl", "updateValue"]
 - ["SL", "init"]
 - ["s28CustomDebugStringConvertibleP", "Adeona"]
 - !private ["s28CustomDebugStringConvertibleP", "AdeonaRequestError"]
+- ["s28CustomDebugStringConvertibleP", "AuthChallengeDisposition"]
 - !private ["s28CustomDebugStringConvertibleP", "Bundle"]
-- ["s28CustomDebugStringConvertibleP", "DisabledEvaluator"]
-- !private ["s28CustomDebugStringConvertibleP", "JSONEncoding"]
-- ["s28CustomDebugStringConvertibleP", "ServerTrustManager"]
-- ["s28CustomDebugStringConvertibleP", "Session"]
+- !private ["s28CustomDebugStringConvertibleP", "JSONSerialization"]
+- !private ["s28CustomDebugStringConvertibleP", "NSURLAuthenticationMethodServerTrust"]
 - ["s28CustomDebugStringConvertibleP", "String"]
 - !private ["s28CustomDebugStringConvertibleP", "UIDevice"]
 - !private ["s28CustomDebugStringConvertibleP", "UIScreen"]
-- ["s28CustomDebugStringConvertibleP", "URLSessionConfiguration"]
+- !private ["s28CustomDebugStringConvertibleP", "URL"]
+- !private ["s28CustomDebugStringConvertibleP", "URLCredential"]
+- !private ["s28CustomDebugStringConvertibleP", "URLRequest"]
+- ["s28CustomDebugStringConvertibleP", "URLSession"]
+- ["s28CustomDebugStringConvertibleP", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["s28CustomDebugStringConvertibleP", ""]
-- ["s28CustomDebugStringConvertibleP", "af"]
 - !private ["s28CustomDebugStringConvertibleP", "appId"]
+- !private ["s28CustomDebugStringConvertibleP", "authenticationMethod"]
 - !private ["s28CustomDebugStringConvertibleP", "bounds"]
 - !private ["s28CustomDebugStringConvertibleP", "current"]
+- !private ["s28CustomDebugStringConvertibleP", "data"]
+- !private ["s28CustomDebugStringConvertibleP", "dataTask"]
 - !private ["s28CustomDebugStringConvertibleP", "debugPrint"]
+- !private ["s28CustomDebugStringConvertibleP", "default"]
 - !private ["s28CustomDebugStringConvertibleP", "deviceInfoDic"]
 - !private ["s28CustomDebugStringConvertibleP", "errorCode"]
 - !private ["s28CustomDebugStringConvertibleP", "errorMessage"]
@@ -160,40 +187,59 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "getScreenHeight"]
 - !private ["s28CustomDebugStringConvertibleP", "getScreenWidth"]
 - !private ["s28CustomDebugStringConvertibleP", "height"]
+- !private ["s28CustomDebugStringConvertibleP", "host"]
+- !private ["s28CustomDebugStringConvertibleP", "httpBody"]
+- !private ["s28CustomDebugStringConvertibleP", "httpMethod"]
 - !private ["s28CustomDebugStringConvertibleP", "identifierForVendor"]
 - ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "jsonObject"]
 - !private ["s28CustomDebugStringConvertibleP", "main"]
 - !private ["s28CustomDebugStringConvertibleP", "modelName"]
+- !private ["s28CustomDebugStringConvertibleP", "previousFailureCount"]
 - !private ["s28CustomDebugStringConvertibleP", "print"]
+- !private ["s28CustomDebugStringConvertibleP", "protectionSpace"]
 - !private ["s28CustomDebugStringConvertibleP", "requestURL"]
-- !private ["s28CustomDebugStringConvertibleP", "result"]
-- !private ["s28CustomDebugStringConvertibleP", "session"]
+- !private ["s28CustomDebugStringConvertibleP", "resume"]
+- !private ["s28CustomDebugStringConvertibleP", "sender"]
+- !private ["s28CustomDebugStringConvertibleP", "serverTrust"]
+- !private ["s28CustomDebugStringConvertibleP", "setValue"]
 - !private ["s28CustomDebugStringConvertibleP", "systemVersion"]
 - !private ["s28CustomDebugStringConvertibleP", "updateValue"]
+- ["s28CustomDebugStringConvertibleP", "urlSession"]
+- ["s28CustomDebugStringConvertibleP", "urlSessionDidFinishEvents"]
 - !private ["s28CustomDebugStringConvertibleP", "width"]
 - !private ["s17CustomReflectableP", "height"]
+- !private ["s17CustomReflectableP", "httpBody"]
+- !private ["s17CustomReflectableP", "httpMethod"]
 - ["s17CustomReflectableP", "init"]
+- !private ["s17CustomReflectableP", "setValue"]
 - !private ["s17CustomReflectableP", "updateValue"]
 - !private ["s17CustomReflectableP", "width"]
 - ["s23CustomStringConvertibleP", "Adeona"]
 - !private ["s23CustomStringConvertibleP", "AdeonaRequestError"]
+- ["s23CustomStringConvertibleP", "AuthChallengeDisposition"]
 - !private ["s23CustomStringConvertibleP", "Bundle"]
-- ["s23CustomStringConvertibleP", "DisabledEvaluator"]
-- !private ["s23CustomStringConvertibleP", "JSONEncoding"]
-- ["s23CustomStringConvertibleP", "ServerTrustManager"]
-- ["s23CustomStringConvertibleP", "Session"]
+- !private ["s23CustomStringConvertibleP", "JSONSerialization"]
+- !private ["s23CustomStringConvertibleP", "NSURLAuthenticationMethodServerTrust"]
 - ["s23CustomStringConvertibleP", "String"]
 - !private ["s23CustomStringConvertibleP", "UIDevice"]
 - !private ["s23CustomStringConvertibleP", "UIScreen"]
-- ["s23CustomStringConvertibleP", "URLSessionConfiguration"]
+- !private ["s23CustomStringConvertibleP", "URL"]
+- !private ["s23CustomStringConvertibleP", "URLCredential"]
+- !private ["s23CustomStringConvertibleP", "URLRequest"]
+- ["s23CustomStringConvertibleP", "URLSession"]
+- ["s23CustomStringConvertibleP", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["s23CustomStringConvertibleP", ""]
-- ["s23CustomStringConvertibleP", "af"]
 - !private ["s23CustomStringConvertibleP", "appId"]
 - !private ["s23CustomStringConvertibleP", "appendInterpolation"]
 - !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "authenticationMethod"]
 - !private ["s23CustomStringConvertibleP", "bounds"]
 - !private ["s23CustomStringConvertibleP", "current"]
+- !private ["s23CustomStringConvertibleP", "data"]
+- !private ["s23CustomStringConvertibleP", "dataTask"]
 - !private ["s23CustomStringConvertibleP", "debugPrint"]
+- !private ["s23CustomStringConvertibleP", "default"]
 - !private ["s23CustomStringConvertibleP", "deviceInfoDic"]
 - !private ["s23CustomStringConvertibleP", "errorCode"]
 - !private ["s23CustomStringConvertibleP", "errorMessage"]
@@ -204,19 +250,26 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "getDeviceModel"]
 - !private ["s23CustomStringConvertibleP", "getScreenHeight"]
 - !private ["s23CustomStringConvertibleP", "getScreenWidth"]
+- !private ["s23CustomStringConvertibleP", "host"]
+- !private ["s23CustomStringConvertibleP", "httpBody"]
+- !private ["s23CustomStringConvertibleP", "httpMethod"]
 - !private ["s23CustomStringConvertibleP", "identifierForVendor"]
 - ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "jsonObject"]
 - !private ["s23CustomStringConvertibleP", "main"]
 - !private ["s23CustomStringConvertibleP", "modelName"]
+- !private ["s23CustomStringConvertibleP", "previousFailureCount"]
 - !private ["s23CustomStringConvertibleP", "print"]
+- !private ["s23CustomStringConvertibleP", "protectionSpace"]
 - !private ["s23CustomStringConvertibleP", "requestURL"]
-- !private ["s23CustomStringConvertibleP", "responseJSON"]
-- !private ["s23CustomStringConvertibleP", "result"]
-- !private ["s23CustomStringConvertibleP", "session"]
+- !private ["s23CustomStringConvertibleP", "resume"]
+- !private ["s23CustomStringConvertibleP", "sender"]
+- !private ["s23CustomStringConvertibleP", "serverTrust"]
+- !private ["s23CustomStringConvertibleP", "setValue"]
 - !private ["s23CustomStringConvertibleP", "systemVersion"]
 - !private ["s23CustomStringConvertibleP", "updateValue"]
-- !private ["9Alamofire11DataRequestC", "responseJSON"]
-- !private ["9Alamofire12DataResponseV", "result"]
+- ["s23CustomStringConvertibleP", "urlSession"]
+- ["s23CustomStringConvertibleP", "urlSessionDidFinishEvents"]
 - !private ["Se", "height"]
 - ["Se", "init"]
 - !private ["Se", "updateValue"]
@@ -225,32 +278,37 @@ depends-member:
 - !private ["s26DefaultStringInterpolationV", "appendLiteral"]
 - ["SD", "init"]
 - !private ["SD", "updateValue"]
-- ["9Alamofire22DisabledTrustEvaluatorC", "init"]
 - !private ["SE", "height"]
 - ["SE", "init"]
 - !private ["SE", "updateValue"]
 - !private ["SE", "width"]
 - ["SQ", "Adeona"]
 - !private ["SQ", "AdeonaRequestError"]
+- ["SQ", "AuthChallengeDisposition"]
 - !private ["SQ", "Bundle"]
-- ["SQ", "DisabledEvaluator"]
-- !private ["SQ", "JSONEncoding"]
-- ["SQ", "ServerTrustManager"]
-- ["SQ", "Session"]
+- !private ["SQ", "JSONSerialization"]
+- !private ["SQ", "NSURLAuthenticationMethodServerTrust"]
 - ["SQ", "String"]
 - !private ["SQ", "UIDevice"]
 - !private ["SQ", "UIScreen"]
-- ["SQ", "URLSessionConfiguration"]
+- !private ["SQ", "URL"]
+- !private ["SQ", "URLCredential"]
+- !private ["SQ", "URLRequest"]
+- ["SQ", "URLSession"]
+- ["SQ", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["SQ", ""]
-- ["SQ", "af"]
 - !private ["SQ", "appId"]
+- !private ["SQ", "authenticationMethod"]
 - !private ["SQ", "bounds"]
+- !private ["SQ", "cancelAuthenticationChallenge"]
 - !private ["SQ", "current"]
+- !private ["SQ", "data"]
+- !private ["SQ", "dataTask"]
 - !private ["SQ", "debugPrint"]
+- !private ["SQ", "default"]
 - !private ["SQ", "deviceInfoDic"]
 - !private ["SQ", "errorCode"]
 - !private ["SQ", "errorMessage"]
-- !private ["SQ", "failure"]
 - !private ["SQ", "fullVersion"]
 - !private ["SQ", "getAppVersion"]
 - !private ["SQ", "getCurrentOSVersion"]
@@ -259,49 +317,62 @@ depends-member:
 - !private ["SQ", "getScreenHeight"]
 - !private ["SQ", "getScreenWidth"]
 - !private ["SQ", "height"]
+- !private ["SQ", "host"]
+- !private ["SQ", "httpBody"]
+- !private ["SQ", "httpMethod"]
 - !private ["SQ", "identifierForVendor"]
 - ["SQ", "init"]
+- !private ["SQ", "jsonObject"]
 - !private ["SQ", "main"]
 - !private ["SQ", "modelName"]
-- !private ["SQ", "post"]
+- !private ["SQ", "previousFailureCount"]
 - !private ["SQ", "print"]
+- !private ["SQ", "protectionSpace"]
 - !private ["SQ", "requestURL"]
-- !private ["SQ", "responseJSON"]
-- !private ["SQ", "session"]
-- !private ["SQ", "success"]
+- !private ["SQ", "resume"]
+- !private ["SQ", "sender"]
+- !private ["SQ", "serverTrust"]
+- !private ["SQ", "setValue"]
 - !private ["SQ", "systemVersion"]
 - !private ["SQ", "updateValue"]
+- ["SQ", "urlSession"]
+- ["SQ", "urlSessionDidFinishEvents"]
+- !private ["SQ", "useCredential"]
 - !private ["SQ", "width"]
-- !private ["s5ErrorP", "errorDescription"]
-- !private ["s5ErrorP", "responseCode"]
+- !private ["s5ErrorP", "localizedDescription"]
 - ["s30ExpressibleByDictionaryLiteralP", "init"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "updateValue"]
 - ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - ["s32ExpressibleByStringInterpolationP", "init"]
 - ["s26ExpressibleByStringLiteralP", "init"]
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
-- !private ["9Alamofire10HTTPMethodV", "post"]
 - ["SH", "Adeona"]
 - !private ["SH", "AdeonaRequestError"]
+- ["SH", "AuthChallengeDisposition"]
 - !private ["SH", "Bundle"]
-- ["SH", "DisabledEvaluator"]
-- !private ["SH", "JSONEncoding"]
-- ["SH", "ServerTrustManager"]
-- ["SH", "Session"]
+- !private ["SH", "JSONSerialization"]
+- !private ["SH", "NSURLAuthenticationMethodServerTrust"]
 - ["SH", "String"]
 - !private ["SH", "UIDevice"]
 - !private ["SH", "UIScreen"]
-- ["SH", "URLSessionConfiguration"]
+- !private ["SH", "URL"]
+- !private ["SH", "URLCredential"]
+- !private ["SH", "URLRequest"]
+- ["SH", "URLSession"]
+- ["SH", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["SH", ""]
-- ["SH", "af"]
 - !private ["SH", "appId"]
+- !private ["SH", "authenticationMethod"]
 - !private ["SH", "bounds"]
+- !private ["SH", "cancelAuthenticationChallenge"]
 - !private ["SH", "current"]
+- !private ["SH", "data"]
+- !private ["SH", "dataTask"]
 - !private ["SH", "debugPrint"]
+- !private ["SH", "default"]
 - !private ["SH", "deviceInfoDic"]
 - !private ["SH", "errorCode"]
 - !private ["SH", "errorMessage"]
-- !private ["SH", "failure"]
 - !private ["SH", "fullVersion"]
 - !private ["SH", "getAppVersion"]
 - !private ["SH", "getCurrentOSVersion"]
@@ -309,44 +380,71 @@ depends-member:
 - !private ["SH", "getDeviceModel"]
 - !private ["SH", "getScreenHeight"]
 - !private ["SH", "getScreenWidth"]
+- !private ["SH", "host"]
+- !private ["SH", "httpBody"]
+- !private ["SH", "httpMethod"]
 - !private ["SH", "identifierForVendor"]
 - ["SH", "init"]
+- !private ["SH", "jsonObject"]
 - !private ["SH", "main"]
 - !private ["SH", "modelName"]
-- !private ["SH", "post"]
+- !private ["SH", "previousFailureCount"]
 - !private ["SH", "print"]
+- !private ["SH", "protectionSpace"]
 - !private ["SH", "requestURL"]
-- !private ["SH", "responseJSON"]
-- !private ["SH", "session"]
-- !private ["SH", "success"]
+- !private ["SH", "resume"]
+- !private ["SH", "sender"]
+- !private ["SH", "serverTrust"]
+- !private ["SH", "setValue"]
 - !private ["SH", "systemVersion"]
 - !private ["SH", "updateValue"]
-- !private ["9Alamofire12JSONEncodingV", "default"]
-- !private ["10Foundation14LocalizedErrorP", "errorDescription"]
-- !private ["10Foundation14LocalizedErrorP", "responseCode"]
+- ["SH", "urlSession"]
+- ["SH", "urlSessionDidFinishEvents"]
+- !private ["SH", "useCredential"]
+- !private ["So19NSJSONSerializationC", "data"]
+- !private ["So19NSJSONSerializationC", "jsonObject"]
 - ["s25LosslessStringConvertibleP", "init"]
 - ["s10MirrorPathP", "init"]
-- ["So9NSCopyingP", "af"]
+- !private ["So8NSCodingP", "authenticationMethod"]
+- !private ["So8NSCodingP", "host"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "previousFailureCount"]
+- !private ["So8NSCodingP", "protectionSpace"]
+- !private ["So8NSCodingP", "sender"]
+- !private ["So8NSCodingP", "serverTrust"]
+- !private ["So9NSCopyingP", "authenticationMethod"]
+- !private ["So9NSCopyingP", "default"]
+- !private ["So9NSCopyingP", "host"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "resume"]
+- !private ["So9NSCopyingP", "serverTrust"]
 - ["So8NSObjectC", "Adeona"]
 - ["So8NSObjectC", "AdeonaAdzProtocol"]
 - ["So8NSObjectC", "AdeonaRequestError"]
+- ["So8NSObjectC", "AuthChallengeDisposition"]
 - !private ["So8NSObjectC", "Bundle"]
-- ["So8NSObjectC", "DisabledEvaluator"]
 - ["So8NSObjectC", "Int"]
-- !private ["So8NSObjectC", "JSONEncoding"]
-- ["So8NSObjectC", "ServerTrustManager"]
-- ["So8NSObjectC", "Session"]
+- !private ["So8NSObjectC", "JSONSerialization"]
+- !private ["So8NSObjectC", "NSURLAuthenticationMethodServerTrust"]
 - ["So8NSObjectC", "String"]
 - !private ["So8NSObjectC", "UIDevice"]
 - !private ["So8NSObjectC", "UIScreen"]
-- ["So8NSObjectC", "URLSessionConfiguration"]
+- !private ["So8NSObjectC", "URL"]
+- ["So8NSObjectC", "URLAuthenticationChallenge"]
+- ["So8NSObjectC", "URLCredential"]
+- !private ["So8NSObjectC", "URLRequest"]
+- ["So8NSObjectC", "URLSession"]
+- ["So8NSObjectC", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["So8NSObjectC", "Void"]
 - ["So8NSObjectC", ""]
-- ["So8NSObjectC", "af"]
 - ["So8NSObjectC", "appId"]
+- !private ["So8NSObjectC", "authenticationMethod"]
 - !private ["So8NSObjectC", "bounds"]
 - !private ["So8NSObjectC", "current"]
+- !private ["So8NSObjectC", "data"]
+- !private ["So8NSObjectC", "dataTask"]
 - !private ["So8NSObjectC", "debugPrint"]
+- !private ["So8NSObjectC", "default"]
 - ["So8NSObjectC", "delegate"]
 - ["So8NSObjectC", "deviceInfoDic"]
 - ["So8NSObjectC", "doAdRequest"]
@@ -360,34 +458,49 @@ depends-member:
 - ["So8NSObjectC", "getDeviceModel"]
 - ["So8NSObjectC", "getScreenHeight"]
 - ["So8NSObjectC", "getScreenWidth"]
+- !private ["So8NSObjectC", "host"]
 - !private ["So8NSObjectC", "identifierForVendor"]
 - ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "jsonObject"]
 - !private ["So8NSObjectC", "main"]
 - !private ["So8NSObjectC", "modelName"]
+- !private ["So8NSObjectC", "previousFailureCount"]
 - !private ["So8NSObjectC", "print"]
+- !private ["So8NSObjectC", "protectionSpace"]
 - ["So8NSObjectC", "requestURL"]
-- ["So8NSObjectC", "session"]
+- !private ["So8NSObjectC", "resume"]
+- !private ["So8NSObjectC", "sender"]
+- !private ["So8NSObjectC", "serverTrust"]
 - ["So8NSObjectC", "setAppId"]
 - ["So8NSObjectC", "setDeviceInformation"]
 - ["So8NSObjectC", "shared"]
 - !private ["So8NSObjectC", "systemVersion"]
+- ["So8NSObjectC", "urlSession"]
+- ["So8NSObjectC", "urlSessionDidFinishEvents"]
 - ["So8NSObjectP", "Adeona"]
 - !private ["So8NSObjectP", "AdeonaRequestError"]
+- ["So8NSObjectP", "AuthChallengeDisposition"]
 - !private ["So8NSObjectP", "Bundle"]
-- ["So8NSObjectP", "DisabledEvaluator"]
-- !private ["So8NSObjectP", "JSONEncoding"]
-- ["So8NSObjectP", "ServerTrustManager"]
-- ["So8NSObjectP", "Session"]
+- !private ["So8NSObjectP", "JSONSerialization"]
+- !private ["So8NSObjectP", "NSURLAuthenticationMethodServerTrust"]
 - ["So8NSObjectP", "String"]
 - !private ["So8NSObjectP", "UIDevice"]
 - !private ["So8NSObjectP", "UIScreen"]
-- ["So8NSObjectP", "URLSessionConfiguration"]
+- !private ["So8NSObjectP", "URL"]
+- !private ["So8NSObjectP", "URLCredential"]
+- !private ["So8NSObjectP", "URLRequest"]
+- ["So8NSObjectP", "URLSession"]
+- ["So8NSObjectP", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["So8NSObjectP", ""]
-- ["So8NSObjectP", "af"]
 - !private ["So8NSObjectP", "appId"]
+- !private ["So8NSObjectP", "authenticationMethod"]
 - !private ["So8NSObjectP", "bounds"]
+- !private ["So8NSObjectP", "cancel"]
 - !private ["So8NSObjectP", "current"]
+- !private ["So8NSObjectP", "data"]
+- !private ["So8NSObjectP", "dataTask"]
 - !private ["So8NSObjectP", "debugPrint"]
+- !private ["So8NSObjectP", "default"]
 - !private ["So8NSObjectP", "deviceInfoDic"]
 - !private ["So8NSObjectP", "errorCode"]
 - !private ["So8NSObjectP", "errorMessage"]
@@ -398,30 +511,39 @@ depends-member:
 - !private ["So8NSObjectP", "getDeviceModel"]
 - !private ["So8NSObjectP", "getScreenHeight"]
 - !private ["So8NSObjectP", "getScreenWidth"]
+- !private ["So8NSObjectP", "host"]
 - !private ["So8NSObjectP", "identifierForVendor"]
 - ["So8NSObjectP", "init"]
+- !private ["So8NSObjectP", "jsonObject"]
 - !private ["So8NSObjectP", "main"]
 - !private ["So8NSObjectP", "modelName"]
+- !private ["So8NSObjectP", "previousFailureCount"]
 - !private ["So8NSObjectP", "print"]
+- !private ["So8NSObjectP", "protectionSpace"]
 - !private ["So8NSObjectP", "requestURL"]
-- !private ["So8NSObjectP", "session"]
+- !private ["So8NSObjectP", "resume"]
+- !private ["So8NSObjectP", "sender"]
+- !private ["So8NSObjectP", "serverTrust"]
 - !private ["So8NSObjectP", "systemVersion"]
-- !private ["9Alamofire17ParameterEncodingP", "default"]
+- ["So8NSObjectP", "urlSession"]
+- ["So8NSObjectP", "urlSessionDidFinishEvents"]
+- !private ["So14NSSecureCodingP", "authenticationMethod"]
+- !private ["So14NSSecureCodingP", "host"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So14NSSecureCodingP", "previousFailureCount"]
+- !private ["So14NSSecureCodingP", "protectionSpace"]
+- !private ["So14NSSecureCodingP", "sender"]
+- !private ["So14NSSecureCodingP", "serverTrust"]
+- !private ["So19NSProgressReportingP", "resume"]
 - ["Sm", "init"]
-- !private ["SY", "post"]
-- !private ["9Alamofire7RequestC", "responseJSON"]
-- ["9Alamofire15RequestDelegateP", "init"]
-- !private ["9Alamofire15RequestDelegateP", "request"]
-- !private ["s6ResultO", "failure"]
-- !private ["s6ResultO", "success"]
+- !private ["SY", "cancelAuthenticationChallenge"]
+- !private ["SY", "useCredential"]
+- !private ["10Foundation20ReferenceConvertibleP", "httpBody"]
+- !private ["10Foundation20ReferenceConvertibleP", "httpMethod"]
+- !private ["10Foundation20ReferenceConvertibleP", "init"]
+- !private ["10Foundation20ReferenceConvertibleP", "setValue"]
 - ["ST", "init"]
 - !private ["ST", "updateValue"]
-- ["9Alamofire21ServerTrustEvaluatingP", "init"]
-- ["9Alamofire18ServerTrustManagerC", "init"]
-- ["9Alamofire7SessionC", "init"]
-- !private ["9Alamofire7SessionC", "request"]
-- ["9Alamofire20SessionStateProviderP", "init"]
-- !private ["9Alamofire20SessionStateProviderP", "request"]
 - ["SS", "init"]
 - !private ["s27StringInterpolationProtocolP", "appendInterpolation"]
 - !private ["s27StringInterpolationProtocolP", "appendLiteral"]
@@ -438,34 +560,86 @@ depends-member:
 - !private ["So8UIScreenC", "main"]
 - !private ["So18UITraitEnvironmentP", "bounds"]
 - !private ["So18UITraitEnvironmentP", "main"]
-- ["9Alamofire14URLConvertibleP", "init"]
-- ["So25NSURLSessionConfigurationC", "af"]
+- !private ["10Foundation3URLV", "init"]
+- !private ["So28NSURLAuthenticationChallengeC", "previousFailureCount"]
+- !private ["So28NSURLAuthenticationChallengeC", "protectionSpace"]
+- !private ["So28NSURLAuthenticationChallengeC", "sender"]
+- !private ["So34NSURLAuthenticationChallengeSenderP", "cancel"]
+- !private ["So15NSURLCredentialC", "init"]
+- !private ["So20NSURLProtectionSpaceC", "authenticationMethod"]
+- !private ["So20NSURLProtectionSpaceC", "host"]
+- !private ["So20NSURLProtectionSpaceC", "serverTrust"]
+- !private ["10Foundation10URLRequestV", "httpBody"]
+- !private ["10Foundation10URLRequestV", "httpMethod"]
+- !private ["10Foundation10URLRequestV", "init"]
+- !private ["10Foundation10URLRequestV", "setValue"]
+- ["So12NSURLSessionC", "AuthChallengeDisposition"]
+- !private ["So12NSURLSessionC", "dataTask"]
+- !private ["So12NSURLSessionC", "init"]
+- !private ["So25NSURLSessionConfigurationC", "default"]
+- !private ["So20NSURLSessionDataTaskC", "resume"]
+- ["So20NSURLSessionDelegateP", "Adeona"]
+- !private ["So20NSURLSessionDelegateP", "AdeonaRequestError"]
+- !private ["So20NSURLSessionDelegateP", "Bundle"]
+- !private ["So20NSURLSessionDelegateP", "JSONSerialization"]
+- !private ["So20NSURLSessionDelegateP", "NSURLAuthenticationMethodServerTrust"]
+- ["So20NSURLSessionDelegateP", "String"]
+- !private ["So20NSURLSessionDelegateP", "UIDevice"]
+- !private ["So20NSURLSessionDelegateP", "UIScreen"]
+- !private ["So20NSURLSessionDelegateP", "URL"]
+- !private ["So20NSURLSessionDelegateP", "URLCredential"]
+- !private ["So20NSURLSessionDelegateP", "URLRequest"]
+- ["So20NSURLSessionDelegateP", "URLSession"]
+- ["So20NSURLSessionDelegateP", "URLSessionDidFinishEventsForBackgroundURLSession"]
+- ["So20NSURLSessionDelegateP", ""]
+- !private ["So20NSURLSessionDelegateP", "appId"]
+- !private ["So20NSURLSessionDelegateP", "debugPrint"]
+- !private ["So20NSURLSessionDelegateP", "deviceInfoDic"]
+- !private ["So20NSURLSessionDelegateP", "getAppVersion"]
+- !private ["So20NSURLSessionDelegateP", "getCurrentOSVersion"]
+- !private ["So20NSURLSessionDelegateP", "getDeviceId"]
+- !private ["So20NSURLSessionDelegateP", "getDeviceModel"]
+- !private ["So20NSURLSessionDelegateP", "getScreenHeight"]
+- !private ["So20NSURLSessionDelegateP", "getScreenWidth"]
+- ["So20NSURLSessionDelegateP", "init"]
+- !private ["So20NSURLSessionDelegateP", "print"]
+- !private ["So20NSURLSessionDelegateP", "requestURL"]
+- ["So20NSURLSessionDelegateP", "urlSession"]
+- ["So20NSURLSessionDelegateP", "urlSessionDidFinishEvents"]
+- !private ["So16NSURLSessionTaskC", "resume"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "height"]
 - ["s30_CustomPlaygroundQuickLookableP", "init"]
 - !private ["s30_CustomPlaygroundQuickLookableP", "width"]
 - ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s34_ExpressibleByFileReferenceLiteralP", "init"]
 - ["s19_HasContiguousBytesP", "init"]
 - ["s35_HasCustomAnyHashableRepresentationP", "init"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "updateValue"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "Adeona"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "AdeonaRequestError"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "AuthChallengeDisposition"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Bundle"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "DisabledEvaluator"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "JSONEncoding"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "ServerTrustManager"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "Session"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "JSONSerialization"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "NSURLAuthenticationMethodServerTrust"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "String"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIDevice"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "UIScreen"]
-- ["10Foundation27_KeyValueCodingAndObservingP", "URLSessionConfiguration"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URL"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLCredential"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "URLRequest"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "URLSession"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
-- ["10Foundation27_KeyValueCodingAndObservingP", "af"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "appId"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "authenticationMethod"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "current"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "data"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dataTask"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "debugPrint"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "default"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "deviceInfoDic"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "errorCode"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "errorMessage"]
@@ -476,31 +650,45 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getDeviceModel"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getScreenHeight"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "getScreenWidth"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "host"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "identifierForVendor"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "jsonObject"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "main"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "modelName"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "previousFailureCount"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "print"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "protectionSpace"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "requestURL"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "session"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "resume"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sender"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "serverTrust"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "systemVersion"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "urlSession"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "urlSessionDidFinishEvents"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Adeona"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "AdeonaRequestError"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "AuthChallengeDisposition"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Bundle"]
-- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DisabledEvaluator"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "JSONEncoding"]
-- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "ServerTrustManager"]
-- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Session"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "JSONSerialization"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "NSURLAuthenticationMethodServerTrust"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "String"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIDevice"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "UIScreen"]
-- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLSessionConfiguration"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URL"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLCredential"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLRequest"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLSession"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "URLSessionDidFinishEventsForBackgroundURLSession"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", ""]
-- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "af"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "appId"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "authenticationMethod"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bounds"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "current"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "data"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "dataTask"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "debugPrint"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "default"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "deviceInfoDic"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "errorCode"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "errorMessage"]
@@ -511,24 +699,33 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "getDeviceModel"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "getScreenHeight"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "getScreenWidth"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "host"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "identifierForVendor"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "jsonObject"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "main"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "modelName"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "previousFailureCount"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "print"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "protectionSpace"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "requestURL"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "session"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "resume"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "sender"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "serverTrust"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "systemVersion"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "urlSession"]
+- ["10Foundation37_KeyValueCodingAndObservingPublishingP", "urlSessionDidFinishEvents"]
 - !private ["s21_ObjectiveCBridgeableP", "height"]
+- !private ["s21_ObjectiveCBridgeableP", "httpBody"]
+- !private ["s21_ObjectiveCBridgeableP", "httpMethod"]
 - ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "setValue"]
 - !private ["s21_ObjectiveCBridgeableP", "updateValue"]
 - !private ["s21_ObjectiveCBridgeableP", "width"]
 depends-nominal:
-- !private "9Alamofire7AFErrorO"
 - "9AdeonaSDK0A0C"
 - "9AdeonaSDK0A12RequestErrorC"
-- "9Alamofire0A8ExtendedP"
-- "9Alamofire0A9ExtensionV"
+- !private "So36NSURLSessionAuthChallengeDispositionV"
 - "SK"
 - !private "So8NSBundleC"
 - !private "So6CGRectV"
@@ -538,12 +735,9 @@ depends-nominal:
 - "s28CustomDebugStringConvertibleP"
 - "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "9Alamofire11DataRequestC"
-- !private "9Alamofire12DataResponseV"
 - "Se"
 - !private "s26DefaultStringInterpolationV"
 - "SD"
-- "9Alamofire22DisabledTrustEvaluatorC"
 - "SE"
 - "SQ"
 - !private "s5ErrorP"
@@ -552,26 +746,20 @@ depends-nominal:
 - "s32ExpressibleByStringInterpolationP"
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
-- !private "9Alamofire10HTTPMethodV"
 - "SH"
-- !private "9Alamofire12JSONEncodingV"
-- !private "10Foundation14LocalizedErrorP"
+- !private "So19NSJSONSerializationC"
 - "s25LosslessStringConvertibleP"
 - "s10MirrorPathP"
-- "So9NSCopyingP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
 - "So8NSObjectC"
 - "So8NSObjectP"
-- !private "9Alamofire17ParameterEncodingP"
+- !private "So14NSSecureCodingP"
+- !private "So19NSProgressReportingP"
 - "Sm"
 - !private "SY"
-- !private "9Alamofire7RequestC"
-- "9Alamofire15RequestDelegateP"
-- !private "s6ResultO"
+- !private "10Foundation20ReferenceConvertibleP"
 - "ST"
-- "9Alamofire21ServerTrustEvaluatingP"
-- "9Alamofire18ServerTrustManagerC"
-- "9Alamofire7SessionC"
-- "9Alamofire20SessionStateProviderP"
 - "SS"
 - !private "s27StringInterpolationProtocolP"
 - "Sy"
@@ -580,12 +768,22 @@ depends-nominal:
 - !private "So8UIDeviceC"
 - !private "So8UIScreenC"
 - !private "So18UITraitEnvironmentP"
-- "9Alamofire14URLConvertibleP"
-- "So25NSURLSessionConfigurationC"
+- !private "10Foundation3URLV"
+- !private "So28NSURLAuthenticationChallengeC"
+- !private "So34NSURLAuthenticationChallengeSenderP"
+- !private "So15NSURLCredentialC"
+- !private "So20NSURLProtectionSpaceC"
+- !private "10Foundation10URLRequestV"
+- "So12NSURLSessionC"
+- !private "So25NSURLSessionConfigurationC"
+- !private "So20NSURLSessionDataTaskC"
+- "So20NSURLSessionDelegateP"
+- !private "So16NSURLSessionTaskC"
 - "s30_CustomPlaygroundQuickLookableP"
 - "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - "s34_ExpressibleByBuiltinStringLiteralP"
 - "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s34_ExpressibleByFileReferenceLiteralP"
 - "s19_HasContiguousBytesP"
 - "s35_HasCustomAnyHashableRepresentationP"
 - "10Foundation27_KeyValueCodingAndObservingP"
@@ -629,7 +827,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_timeval32.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_timeval64.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_ucontext64.h"
@@ -639,7 +836,7 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFUUID.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers/CoreMIDI.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/AdeonaSDK.h"
+- "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/AdeonaSDK.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFURL.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURL.h"
@@ -838,7 +1035,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/__wctype.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/xlocale/__wctype.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/runetype.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Headers/Alamofire.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/semaphore.h"
@@ -1772,7 +1968,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/NSDataAsset.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIImageAsset.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_fd_isset.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Headers/Alamofire-Swift.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/wait.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/bsm/audit.h"
@@ -1967,12 +2162,11 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIUserActivity.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap"
+- "/Users/pc/Downloads/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/ImageIO.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/IOSurface.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Modules/module.modulemap"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Metal.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreVideo.framework/Modules/module.modulemap"
@@ -2001,4 +2195,4 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "638202d57f7832a4e56f07e2d5f85801"
+interface-hash: "167fc5bdae65dd40f2f8fe86b80d9ad8"

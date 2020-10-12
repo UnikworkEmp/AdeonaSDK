@@ -24,13 +24,12 @@ provides-dynamic-lookup:
 depends-top-level:
 - !private "+"
 - !private ">"
-- !private "??"
-- !private "AF"
 - !private "Adeona"
 - "AdeonaRequestError"
 - "AssignmentPrecedence"
 - !private "CGRect"
 - "CastingPrecedence"
+- !private "Data"
 - !private "DispatchQueue"
 - !private "Double"
 - !private "FloatLiteralType"
@@ -50,8 +49,6 @@ depends-top-level:
 - !private "debugPrint"
 - "popupAdDelegate"
 depends-member:
-- !private ["9Alamofire7AFErrorO", "errorDescription"]
-- !private ["9Alamofire7AFErrorO", "responseCode"]
 - !private ["s18AdditiveArithmeticP", "init"]
 - !private ["s18AdditiveArithmeticP", "now"]
 - !private ["9AdeonaSDK0A0C", "deviceInfoDic"]
@@ -69,10 +66,10 @@ depends-member:
 - !private ["So15CALayerDelegateP", "init"]
 - !private ["So6CGRectV", "init"]
 - !private ["So6CGRectV", "width"]
-- !private ["s7CVarArgP", "AF"]
 - !private ["s7CVarArgP", "Adeona"]
 - !private ["s7CVarArgP", "AdeonaRequestError"]
 - !private ["s7CVarArgP", "CGRect"]
+- !private ["s7CVarArgP", "Data"]
 - !private ["s7CVarArgP", "DispatchQueue"]
 - !private ["s7CVarArgP", "Double"]
 - ["s7CVarArgP", "PopUpAd"]
@@ -88,6 +85,7 @@ depends-member:
 - !private ["s7CVarArgP", "adSpaceId"]
 - !private ["s7CVarArgP", "addGestureRecognizer"]
 - !private ["s7CVarArgP", "addSubview"]
+- !private ["s7CVarArgP", "async"]
 - !private ["s7CVarArgP", "asyncAfter"]
 - !private ["s7CVarArgP", "bounds"]
 - !private ["s7CVarArgP", "bringSubviewToFront"]
@@ -100,6 +98,7 @@ depends-member:
 - !private ["s7CVarArgP", "doAdRequest"]
 - !private ["s7CVarArgP", "downloadImage"]
 - !private ["s7CVarArgP", "frame"]
+- !private ["s7CVarArgP", "global"]
 - !private ["s7CVarArgP", "handleAdClick"]
 - !private ["s7CVarArgP", "image"]
 - ["s7CVarArgP", "init"]
@@ -117,10 +116,11 @@ depends-member:
 - !private ["Sl", "subscript"]
 - ["SL", "init"]
 - !private ["SL", "now"]
-- !private ["s28CustomDebugStringConvertibleP", "AF"]
+- !private ["10Foundation15ContiguousBytesP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "Adeona"]
 - !private ["s28CustomDebugStringConvertibleP", "AdeonaRequestError"]
 - !private ["s28CustomDebugStringConvertibleP", "CGRect"]
+- !private ["s28CustomDebugStringConvertibleP", "Data"]
 - !private ["s28CustomDebugStringConvertibleP", "DispatchQueue"]
 - !private ["s28CustomDebugStringConvertibleP", "Double"]
 - ["s28CustomDebugStringConvertibleP", "PopUpAd"]
@@ -136,6 +136,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "adSpaceId"]
 - !private ["s28CustomDebugStringConvertibleP", "addGestureRecognizer"]
 - !private ["s28CustomDebugStringConvertibleP", "addSubview"]
+- !private ["s28CustomDebugStringConvertibleP", "async"]
 - !private ["s28CustomDebugStringConvertibleP", "asyncAfter"]
 - !private ["s28CustomDebugStringConvertibleP", "bounds"]
 - !private ["s28CustomDebugStringConvertibleP", "bringSubviewToFront"]
@@ -148,6 +149,7 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "doAdRequest"]
 - !private ["s28CustomDebugStringConvertibleP", "downloadImage"]
 - !private ["s28CustomDebugStringConvertibleP", "frame"]
+- !private ["s28CustomDebugStringConvertibleP", "global"]
 - !private ["s28CustomDebugStringConvertibleP", "handleAdClick"]
 - !private ["s28CustomDebugStringConvertibleP", "image"]
 - ["s28CustomDebugStringConvertibleP", "init"]
@@ -156,7 +158,6 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "openURL"]
 - !private ["s28CustomDebugStringConvertibleP", "paramDic"]
 - !private ["s28CustomDebugStringConvertibleP", "popUpDic"]
-- !private ["s28CustomDebugStringConvertibleP", "result"]
 - !private ["s28CustomDebugStringConvertibleP", "shared"]
 - !private ["s28CustomDebugStringConvertibleP", "show"]
 - !private ["s28CustomDebugStringConvertibleP", "subCategory"]
@@ -167,10 +168,10 @@ depends-member:
 - !private ["s17CustomReflectableP", "now"]
 - !private ["s17CustomReflectableP", "subscript"]
 - !private ["s17CustomReflectableP", "width"]
-- !private ["s23CustomStringConvertibleP", "AF"]
 - !private ["s23CustomStringConvertibleP", "Adeona"]
 - !private ["s23CustomStringConvertibleP", "AdeonaRequestError"]
 - !private ["s23CustomStringConvertibleP", "CGRect"]
+- !private ["s23CustomStringConvertibleP", "Data"]
 - !private ["s23CustomStringConvertibleP", "DispatchQueue"]
 - !private ["s23CustomStringConvertibleP", "Double"]
 - ["s23CustomStringConvertibleP", "PopUpAd"]
@@ -188,6 +189,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "addSubview"]
 - !private ["s23CustomStringConvertibleP", "appendInterpolation"]
 - !private ["s23CustomStringConvertibleP", "appendLiteral"]
+- !private ["s23CustomStringConvertibleP", "async"]
 - !private ["s23CustomStringConvertibleP", "asyncAfter"]
 - !private ["s23CustomStringConvertibleP", "bounds"]
 - !private ["s23CustomStringConvertibleP", "bringSubviewToFront"]
@@ -200,6 +202,7 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "doAdRequest"]
 - !private ["s23CustomStringConvertibleP", "downloadImage"]
 - !private ["s23CustomStringConvertibleP", "frame"]
+- !private ["s23CustomStringConvertibleP", "global"]
 - !private ["s23CustomStringConvertibleP", "handleAdClick"]
 - !private ["s23CustomStringConvertibleP", "image"]
 - ["s23CustomStringConvertibleP", "init"]
@@ -208,14 +211,12 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "openURL"]
 - !private ["s23CustomStringConvertibleP", "paramDic"]
 - !private ["s23CustomStringConvertibleP", "popUpDic"]
-- !private ["s23CustomStringConvertibleP", "response"]
-- !private ["s23CustomStringConvertibleP", "result"]
 - !private ["s23CustomStringConvertibleP", "shared"]
 - !private ["s23CustomStringConvertibleP", "show"]
 - !private ["s23CustomStringConvertibleP", "subCategory"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
-- !private ["9Alamofire11DataRequestC", "response"]
-- !private ["9Alamofire12DataResponseV", "result"]
+- !private ["10Foundation4DataV", "init"]
+- !private ["10Foundation12DataProtocolP", "init"]
 - !private ["10Foundation4DateV", "now"]
 - !private ["Se", "count"]
 - ["Se", "init"]
@@ -227,9 +228,13 @@ depends-member:
 - !private ["SD", "count"]
 - ["SD", "init"]
 - !private ["SD", "subscript"]
+- !private ["So18OS_dispatch_objectC", "async"]
 - !private ["So18OS_dispatch_objectC", "asyncAfter"]
+- !private ["So18OS_dispatch_objectC", "global"]
 - !private ["So18OS_dispatch_objectC", "main"]
+- !private ["So17OS_dispatch_queueC", "async"]
 - !private ["So17OS_dispatch_queueC", "asyncAfter"]
+- !private ["So17OS_dispatch_queueC", "global"]
 - !private ["So17OS_dispatch_queueC", "main"]
 - !private ["8Dispatch0A4TimeV", "now"]
 - !private ["8Dispatch0A8WallTimeV", "now"]
@@ -240,10 +245,10 @@ depends-member:
 - !private ["SE", "now"]
 - !private ["SE", "subscript"]
 - !private ["SE", "width"]
-- !private ["SQ", "AF"]
 - !private ["SQ", "Adeona"]
 - !private ["SQ", "AdeonaRequestError"]
 - !private ["SQ", "CGRect"]
+- !private ["SQ", "Data"]
 - !private ["SQ", "DispatchQueue"]
 - !private ["SQ", "Double"]
 - ["SQ", "PopUpAd"]
@@ -259,6 +264,7 @@ depends-member:
 - !private ["SQ", "adSpaceId"]
 - !private ["SQ", "addGestureRecognizer"]
 - !private ["SQ", "addSubview"]
+- !private ["SQ", "async"]
 - !private ["SQ", "asyncAfter"]
 - !private ["SQ", "bounds"]
 - !private ["SQ", "bringSubviewToFront"]
@@ -270,9 +276,8 @@ depends-member:
 - !private ["SQ", "deviceInfoDic"]
 - !private ["SQ", "doAdRequest"]
 - !private ["SQ", "downloadImage"]
-- !private ["SQ", "failure"]
 - !private ["SQ", "frame"]
-- !private ["SQ", "get"]
+- !private ["SQ", "global"]
 - !private ["SQ", "handleAdClick"]
 - !private ["SQ", "image"]
 - ["SQ", "init"]
@@ -281,15 +286,11 @@ depends-member:
 - !private ["SQ", "openURL"]
 - !private ["SQ", "paramDic"]
 - !private ["SQ", "popUpDic"]
-- !private ["SQ", "response"]
 - !private ["SQ", "shared"]
 - !private ["SQ", "show"]
 - !private ["SQ", "subCategory"]
 - !private ["SQ", "subscript"]
-- !private ["SQ", "success"]
 - !private ["SQ", "width"]
-- !private ["s5ErrorP", "errorDescription"]
-- !private ["s5ErrorP", "responseCode"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "count"]
 - ["s30ExpressibleByDictionaryLiteralP", "init"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
@@ -303,11 +304,10 @@ depends-member:
 - ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
 - !private ["SF", "init"]
 - !private ["SF", "now"]
-- !private ["9Alamofire10HTTPMethodV", "get"]
-- !private ["SH", "AF"]
 - !private ["SH", "Adeona"]
 - !private ["SH", "AdeonaRequestError"]
 - !private ["SH", "CGRect"]
+- !private ["SH", "Data"]
 - !private ["SH", "DispatchQueue"]
 - !private ["SH", "Double"]
 - ["SH", "PopUpAd"]
@@ -323,6 +323,7 @@ depends-member:
 - !private ["SH", "adSpaceId"]
 - !private ["SH", "addGestureRecognizer"]
 - !private ["SH", "addSubview"]
+- !private ["SH", "async"]
 - !private ["SH", "asyncAfter"]
 - !private ["SH", "bounds"]
 - !private ["SH", "bringSubviewToFront"]
@@ -334,9 +335,8 @@ depends-member:
 - !private ["SH", "deviceInfoDic"]
 - !private ["SH", "doAdRequest"]
 - !private ["SH", "downloadImage"]
-- !private ["SH", "failure"]
 - !private ["SH", "frame"]
-- !private ["SH", "get"]
+- !private ["SH", "global"]
 - !private ["SH", "handleAdClick"]
 - !private ["SH", "image"]
 - ["SH", "init"]
@@ -345,17 +345,15 @@ depends-member:
 - !private ["SH", "openURL"]
 - !private ["SH", "paramDic"]
 - !private ["SH", "popUpDic"]
-- !private ["SH", "response"]
 - !private ["SH", "shared"]
 - !private ["SH", "show"]
 - !private ["SH", "subCategory"]
 - !private ["SH", "subscript"]
-- !private ["SH", "success"]
-- !private ["10Foundation14LocalizedErrorP", "errorDescription"]
-- !private ["10Foundation14LocalizedErrorP", "responseCode"]
 - ["s25LosslessStringConvertibleP", "init"]
 - !private ["s25LosslessStringConvertibleP", "now"]
 - ["s10MirrorPathP", "init"]
+- !private ["SM", "init"]
+- !private ["10Foundation19MutableDataProtocolP", "init"]
 - !private ["So8NSCodingP", "addGestureRecognizer"]
 - !private ["So8NSCodingP", "addSubview"]
 - !private ["So8NSCodingP", "bringSubviewToFront"]
@@ -364,10 +362,10 @@ depends-member:
 - !private ["So8NSCodingP", "init"]
 - !private ["So21NSItemProviderReadingP", "init"]
 - !private ["So21NSItemProviderWritingP", "init"]
-- !private ["So8NSObjectC", "AF"]
 - !private ["So8NSObjectC", "Adeona"]
 - !private ["So8NSObjectC", "AdeonaRequestError"]
 - !private ["So8NSObjectC", "CGRect"]
+- !private ["So8NSObjectC", "Data"]
 - !private ["So8NSObjectC", "DispatchQueue"]
 - !private ["So8NSObjectC", "Double"]
 - !private ["So8NSObjectC", "Int"]
@@ -386,6 +384,7 @@ depends-member:
 - ["So8NSObjectC", "adSpaceId"]
 - !private ["So8NSObjectC", "addGestureRecognizer"]
 - !private ["So8NSObjectC", "addSubview"]
+- !private ["So8NSObjectC", "async"]
 - !private ["So8NSObjectC", "asyncAfter"]
 - !private ["So8NSObjectC", "bounds"]
 - !private ["So8NSObjectC", "bringSubviewToFront"]
@@ -397,6 +396,7 @@ depends-member:
 - !private ["So8NSObjectC", "doAdRequest"]
 - ["So8NSObjectC", "downloadImage"]
 - !private ["So8NSObjectC", "frame"]
+- !private ["So8NSObjectC", "global"]
 - ["So8NSObjectC", "handleAdClick"]
 - !private ["So8NSObjectC", "image"]
 - ["So8NSObjectC", "init"]
@@ -409,10 +409,10 @@ depends-member:
 - ["So8NSObjectC", "shared"]
 - ["So8NSObjectC", "show"]
 - ["So8NSObjectC", "subCategory"]
-- !private ["So8NSObjectP", "AF"]
 - !private ["So8NSObjectP", "Adeona"]
 - !private ["So8NSObjectP", "AdeonaRequestError"]
 - !private ["So8NSObjectP", "CGRect"]
+- !private ["So8NSObjectP", "Data"]
 - !private ["So8NSObjectP", "DispatchQueue"]
 - !private ["So8NSObjectP", "Double"]
 - ["So8NSObjectP", "PopUpAd"]
@@ -428,6 +428,7 @@ depends-member:
 - !private ["So8NSObjectP", "adSpaceId"]
 - !private ["So8NSObjectP", "addGestureRecognizer"]
 - !private ["So8NSObjectP", "addSubview"]
+- !private ["So8NSObjectP", "async"]
 - !private ["So8NSObjectP", "asyncAfter"]
 - !private ["So8NSObjectP", "bounds"]
 - !private ["So8NSObjectP", "bringSubviewToFront"]
@@ -439,6 +440,7 @@ depends-member:
 - !private ["So8NSObjectP", "doAdRequest"]
 - !private ["So8NSObjectP", "downloadImage"]
 - !private ["So8NSObjectP", "frame"]
+- !private ["So8NSObjectP", "global"]
 - !private ["So8NSObjectP", "handleAdClick"]
 - !private ["So8NSObjectP", "image"]
 - ["So8NSObjectP", "init"]
@@ -452,12 +454,14 @@ depends-member:
 - !private ["So14NSSecureCodingP", "init"]
 - !private ["Sj", "init"]
 - !private ["Sj", "now"]
+- !private ["So9OS_objectC", "async"]
 - !private ["So9OS_objectC", "asyncAfter"]
+- !private ["So9OS_objectC", "global"]
 - !private ["So9OS_objectC", "main"]
-- !private ["9AdeonaSDK7PopUpAdC", "AF"]
 - !private ["9AdeonaSDK7PopUpAdC", "Adeona"]
 - !private ["9AdeonaSDK7PopUpAdC", "AdeonaRequestError"]
 - !private ["9AdeonaSDK7PopUpAdC", "CGRect"]
+- !private ["9AdeonaSDK7PopUpAdC", "Data"]
 - !private ["9AdeonaSDK7PopUpAdC", "DispatchQueue"]
 - !private ["9AdeonaSDK7PopUpAdC", "Double"]
 - !private ["9AdeonaSDK7PopUpAdC", "Int"]
@@ -488,23 +492,19 @@ depends-member:
 - ["9AdeonaSDK7PopUpAdC", "shared"]
 - ["9AdeonaSDK7PopUpAdC", "show"]
 - ["9AdeonaSDK7PopUpAdC", "subCategory"]
+- !private ["Sk", "init"]
 - ["Sm", "init"]
-- !private ["SY", "get"]
 - !private ["10Foundation20ReferenceConvertibleP", "init"]
 - !private ["10Foundation20ReferenceConvertibleP", "now"]
-- !private ["9Alamofire7RequestC", "response"]
-- !private ["9Alamofire15RequestDelegateP", "request"]
-- !private ["s6ResultO", "failure"]
-- !private ["s6ResultO", "success"]
 - !private ["s10SIMDScalarP", "init"]
 - !private ["s10SIMDScalarP", "now"]
+- !private ["7Combine9SchedulerP", "async"]
 - !private ["7Combine9SchedulerP", "asyncAfter"]
+- !private ["7Combine9SchedulerP", "global"]
 - !private ["7Combine9SchedulerP", "main"]
 - !private ["ST", "count"]
 - ["ST", "init"]
 - !private ["ST", "subscript"]
-- !private ["9Alamofire7SessionC", "request"]
-- !private ["9Alamofire20SessionStateProviderP", "request"]
 - !private ["s13SignedNumericP", "init"]
 - !private ["s13SignedNumericP", "now"]
 - !private ["Sx", "init"]
@@ -633,7 +633,9 @@ depends-member:
 - !private ["So6UIViewC", "image"]
 - !private ["So6UIViewC", "init"]
 - !private ["10Foundation3URLV", "init"]
-- ["9Alamofire14URLConvertibleP", "init"]
+- !private ["So20NSURLSessionDelegateP", "deviceInfoDic"]
+- !private ["So20NSURLSessionDelegateP", "doAdRequest"]
+- !private ["So20NSURLSessionDelegateP", "shared"]
 - !private ["s15_CVarArgAlignedP", "init"]
 - !private ["s15_CVarArgAlignedP", "now"]
 - !private ["s22_CVarArgPassedAsDoubleP", "init"]
@@ -655,10 +657,10 @@ depends-member:
 - ["s35_HasCustomAnyHashableRepresentationP", "init"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "now"]
 - !private ["s35_HasCustomAnyHashableRepresentationP", "subscript"]
-- !private ["10Foundation27_KeyValueCodingAndObservingP", "AF"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Adeona"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "AdeonaRequestError"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "CGRect"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "Data"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "DispatchQueue"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "Double"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "PopUpAd"]
@@ -674,6 +676,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "adSpaceId"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addGestureRecognizer"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "addSubview"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "async"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "asyncAfter"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "bringSubviewToFront"]
@@ -685,6 +688,7 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "doAdRequest"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "downloadImage"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "frame"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "global"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "handleAdClick"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "image"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "init"]
@@ -695,10 +699,10 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "shared"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "show"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "subCategory"]
-- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "AF"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Adeona"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "AdeonaRequestError"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "CGRect"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Data"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "DispatchQueue"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "Double"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "PopUpAd"]
@@ -714,6 +718,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "adSpaceId"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addGestureRecognizer"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "addSubview"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "async"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "asyncAfter"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bounds"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "bringSubviewToFront"]
@@ -725,6 +730,7 @@ depends-member:
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "doAdRequest"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "downloadImage"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "frame"]
+- !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "global"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "handleAdClick"]
 - !private ["10Foundation37_KeyValueCodingAndObservingPublishingP", "image"]
 - ["10Foundation37_KeyValueCodingAndObservingPublishingP", "init"]
@@ -753,7 +759,6 @@ depends-member:
 - ["9AdeonaSDK15popupAdDelegateP", "didReceivePopUpAdView"]
 - ["9AdeonaSDK15popupAdDelegateP", "receivedPopUpAd"]
 depends-nominal:
-- !private "9Alamofire7AFErrorO"
 - !private "s18AdditiveArithmeticP"
 - !private "9AdeonaSDK0A0C"
 - !private "9AdeonaSDK0A12RequestErrorC"
@@ -764,11 +769,12 @@ depends-nominal:
 - "s7CVarArgP"
 - "Sl"
 - "SL"
+- !private "10Foundation15ContiguousBytesP"
 - "s28CustomDebugStringConvertibleP"
 - "s17CustomReflectableP"
 - "s23CustomStringConvertibleP"
-- !private "9Alamofire11DataRequestC"
-- !private "9Alamofire12DataResponseV"
+- !private "10Foundation4DataV"
+- !private "10Foundation12DataProtocolP"
 - !private "10Foundation4DateV"
 - "Se"
 - !private "s26DefaultStringInterpolationV"
@@ -780,7 +786,6 @@ depends-nominal:
 - !private "Sd"
 - "SE"
 - "SQ"
-- !private "s5ErrorP"
 - "s30ExpressibleByDictionaryLiteralP"
 - "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s25ExpressibleByFloatLiteralP"
@@ -789,11 +794,11 @@ depends-nominal:
 - "s26ExpressibleByStringLiteralP"
 - "s33ExpressibleByUnicodeScalarLiteralP"
 - !private "SF"
-- !private "9Alamofire10HTTPMethodV"
 - "SH"
-- !private "10Foundation14LocalizedErrorP"
 - "s25LosslessStringConvertibleP"
 - "s10MirrorPathP"
+- !private "SM"
+- !private "10Foundation19MutableDataProtocolP"
 - !private "So8NSCodingP"
 - !private "So21NSItemProviderReadingP"
 - !private "So21NSItemProviderWritingP"
@@ -803,17 +808,12 @@ depends-nominal:
 - !private "Sj"
 - !private "So9OS_objectC"
 - "9AdeonaSDK7PopUpAdC"
+- !private "Sk"
 - "Sm"
-- !private "SY"
 - !private "10Foundation20ReferenceConvertibleP"
-- !private "9Alamofire7RequestC"
-- !private "9Alamofire15RequestDelegateP"
-- !private "s6ResultO"
 - !private "s10SIMDScalarP"
 - !private "7Combine9SchedulerP"
 - "ST"
-- !private "9Alamofire7SessionC"
-- !private "9Alamofire20SessionStateProviderP"
 - !private "s13SignedNumericP"
 - !private "Sx"
 - "SS"
@@ -845,7 +845,7 @@ depends-nominal:
 - !private "So23UIUserActivityRestoringP"
 - !private "So6UIViewC"
 - !private "10Foundation3URLV"
-- "9Alamofire14URLConvertibleP"
+- !private "So20NSURLSessionDelegateP"
 - !private "s15_CVarArgAlignedP"
 - !private "s22_CVarArgPassedAsDoubleP"
 - "s30_CustomPlaygroundQuickLookableP"
@@ -901,7 +901,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_timeval32.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_timeval64.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_ucontext64.h"
@@ -911,7 +910,7 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFUUID.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers/CoreMIDI.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/AdeonaSDK.h"
+- "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/AdeonaSDK.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFURL.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURL.h"
@@ -1110,7 +1109,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/__wctype.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/xlocale/__wctype.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/runetype.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Headers/Alamofire.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/semaphore.h"
@@ -2044,7 +2042,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/NSDataAsset.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIImageAsset.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_fd_isset.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Headers/Alamofire-Swift.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/wait.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/bsm/audit.h"
@@ -2239,12 +2236,11 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIUserActivity.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap"
+- "/Users/pc/Downloads/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/ImageIO.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/IOSurface.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Modules/module.modulemap"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Metal.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreVideo.framework/Modules/module.modulemap"
@@ -2273,4 +2269,4 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/MediaToolbox.framework/Headers/MediaToolbox.apinotes"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/AudioToolbox.framework/Headers/AudioToolbox.apinotes"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Security.framework/Headers/Security.apinotes"
-interface-hash: "41b4867760c589bab16d1d6f9b626b98"
+interface-hash: "f3d9ec8695a44738ec0346609e948ef9"

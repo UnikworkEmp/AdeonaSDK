@@ -87,7 +87,33 @@ import AVFoundation
     }
     
     func downloadImage(_ strURL:String) {
-         AF.request(strURL,method: .get).response{ response in
+        
+        let url = URL(string: strURL)
+
+        DispatchQueue.global().async {
+              if let _ = url{
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            DispatchQueue.main.async {
+                let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleAdClick))
+                view.addGestureRecognizer(tap)
+                let imageView = UIImageView(frame: view.frame)
+                debugPrint("Image frame \(imageView.frame)")
+                imageView.image = UIImage(data: data!, scale:1)
+                imageView.contentMode = .scaleAspectFit
+                 debugPrint("Image frame \(imageView.image)")
+                view.addSubview(imageView)
+                view.bringSubviewToFront(imageView)
+                let vc = VideoViewController()
+                vc.view.addSubview(view)
+                self.delegate?.didReceiveInterstitialAdView(vc)
+                }
+              }else{AdeonaRequestError(errorCode: 404, errorMessage: "Ad url not found")
+                    self.delegate?.didFailToReceiveInterstitialAd(AdeonaRequestError(errorCode: 404, errorMessage: "Ad url not found"))
+                }
+        }
+        
+       /*  AF.request(strURL,method: .get).response{ response in
             debugPrint("Got response \(response)")
            switch response.result {
             case .success(let responseData):
@@ -112,7 +138,7 @@ import AVFoundation
                 //call method when failed to get ad
                 self.delegate?.didFailToReceiveInterstitialAd(AdeonaRequestError(errorCode: error.responseCode ?? 0, errorMessage: error.errorDescription ?? ""))
             }
-        }
+        }*/
     }
     
     @objc open func handleAdClick(){

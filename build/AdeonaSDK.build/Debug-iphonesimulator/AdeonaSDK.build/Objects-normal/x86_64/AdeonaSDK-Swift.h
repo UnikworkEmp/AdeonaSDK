@@ -202,15 +202,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 @protocol AdeonaAdzProtocol;
+@class NSURLSession;
+@class NSURLAuthenticationChallenge;
+@class NSURLCredential;
 
 SWIFT_CLASS("_TtC9AdeonaSDK6Adeona")
-@interface Adeona : NSObject
+@interface Adeona : NSObject <NSURLSessionDelegate>
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) Adeona * _Nonnull shared;)
 + (Adeona * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 @property (nonatomic, strong) id <AdeonaAdzProtocol> _Nullable delegate;
 - (void)setAppId:(NSString * _Nonnull)appId;
 - (NSString * _Nonnull)getAppId SWIFT_WARN_UNUSED_RESULT;
 - (void)setDeviceInformation:(NSDictionary<NSString *, id> * _Nonnull)deviceDic;
+- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

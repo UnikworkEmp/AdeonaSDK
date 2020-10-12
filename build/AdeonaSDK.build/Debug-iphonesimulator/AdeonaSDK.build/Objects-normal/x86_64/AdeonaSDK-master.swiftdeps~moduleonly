@@ -1,13 +1,13 @@
 version: "Apple Swift version 5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
-options: "1d7b93cac69e4aa2056207c3092560b8"
-build_time: [1602491607, 988967000]
+options: "e7027029be4f40007fa813f90797aeeb"
+build_time: [1602153077, 637507000]
 inputs:
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/InterstitialAd.swift": [1602491563, 526247489]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/VideoViewController.swift": [1600924710, 608217]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/BannerAd.swift": [1602491566, 902413983]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/AdeonaAdz.swift": [1602055457, 675955801]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/VideoAd.swift": [1602491566, 919659073]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/extension.swift": [1600404699, 0]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/NativeAd.swift": [1602491566, 877237715]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/PopUpAd.swift": [1602491566, 891349217]
-  "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/PlayerViewController.swift": [1601550397, 876023111]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/InterstitialAd.swift": [1602141525, 365579549]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/VideoViewController.swift": [1600924710, 0]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/BannerAd.swift": [1602141186, 261196792]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/AdeonaAdz.swift": [1602140671, 585533873]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/VideoAd.swift": [1602136701, 262415469]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/extension.swift": [1602136396, 802304290]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/NativeAd.swift": [1602141455, 357638047]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/PopUpAd.swift": [1602141433, 365705865]
+  "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/PlayerViewController.swift": [1601550397, 0]

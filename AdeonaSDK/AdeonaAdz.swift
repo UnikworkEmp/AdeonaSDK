@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 @objc public class AdeonaRequestError:NSObject {
     public var errorCode: Int?
@@ -20,7 +21,7 @@ import UIKit
 @objc public protocol AdeonaAdzProtocol {
 }
 
-@objc open class Adeona: NSObject {
+@objc open class Adeona: NSObject,URLSessionDelegate {
     
     @objc public static let shared = Adeona()
     
@@ -29,12 +30,12 @@ import UIKit
     var appId = String()
     var requestURL = "https://iap.gateway.adareach.com/api/adRequest"//"http://smartmessenger.lk:7000/api/adRequest"
 
-    private let session: Session = {
+    /*private let session: URLSession = {
         let manager = ServerTrustManager(evaluators: ["iap.gateway.adareach.com": DisabledEvaluator()])
-        let configuration = URLSessionConfiguration.af.default
+        let configuration = URLSessionConfiguration.default//af.default
 
         return Session(configuration: configuration, serverTrustManager: manager)
-    }()
+    }()*/
     
     var deviceInfoDic = [String:Any]()
     
@@ -95,15 +96,47 @@ import UIKit
         return "\(screenHeight)"
     }
     
-    
-    
-    
     //Api call request for banner ad
        func doAdRequest( _ paramDic:[String:Any],completion: @escaping (_ result: [String:Any],_ error:AdeonaRequestError?) -> Void) {
-//        let manager = ServerTrustManager(evaluators: ["iap.gateway.adareach.com": PinnedCertificatesTrustEvaluator()])
-//        let session = Session(serverTrustManager: manager)
         
-         session.request(requestURL, method: .post,  parameters: paramDic, encoding: JSONEncoding.default)
+        let Url = String(format: requestURL)
+        guard let serviceUrl = URL(string: Url) else { return }
+        var request = URLRequest(url: serviceUrl)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: paramDic, options: []) else {
+            return
+        }
+        request.httpBody = httpBody
+
+        //let session = URLSession.shared
+        
+       let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+
+        
+        urlSession.dataTask(with: request) { (data, response, error) in
+            if let response = response {
+                debugPrint("response... \(response)")
+            }
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    debugPrint("json....\(json)")
+                    if let json = json as? [String: Any] {
+                      debugPrint(json)
+                      //  debugPrint(json["resourceUrl"] as? Int)
+                      completion(json,nil)
+                    }
+                } catch {
+                    debugPrint("error....\(error)")
+                    debugPrint(error)
+                    completion([:],AdeonaRequestError(errorCode: 200 ?? 0, errorMessage: error.localizedDescription ?? ""))
+                }
+            }
+            }.resume()
+        
+       
+         /*session.request(requestURL, method: .post,  parameters: paramDic, encoding: JSONEncoding.default)
              .responseJSON { response in
                  switch response.result {
                    
@@ -118,6 +151,28 @@ import UIKit
                      completion([:],AdeonaRequestError(errorCode: error.responseCode ?? 0, errorMessage: error.errorDescription ?? ""))
                      
                  }
-           }
+           }*/
        }
+    
+    public func urlSession(_ session: URLSession,
+         didReceive challenge: URLAuthenticationChallenge,
+            completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+
+        guard challenge.previousFailureCount == 0 else {
+            challenge.sender?.cancel(challenge)
+            // Inform the user that the user name and password are incorrect
+            completionHandler(.cancelAuthenticationChallenge, nil)
+            return
+        }
+
+        // Within your authentication handler delegate method, you should check to see if the challenge protection space has an authentication type of NSURLAuthenticationMethodServerTrust
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust
+           // and if so, obtain the serverTrust information from that protection space.
+           && challenge.protectionSpace.serverTrust != nil
+           && challenge.protectionSpace.host == "iap.gateway.adareach.com" {
+            let proposedCredential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+            completionHandler(URLSession.AuthChallengeDisposition.useCredential, proposedCredential)
+        }
+    }
+
 }

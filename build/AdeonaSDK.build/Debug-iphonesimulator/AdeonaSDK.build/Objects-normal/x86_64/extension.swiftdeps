@@ -41,10 +41,6 @@ depends-top-level:
 - !private "~="
 depends-member:
 - ["s18AdditiveArithmeticP", "init"]
-- !private ["9Alamofire0A8ExtendedP", "assert"]
-- !private ["9Alamofire0A8ExtendedP", "buildVersion"]
-- !private ["9Alamofire0A8ExtendedP", "infoDictionary"]
-- !private ["9Alamofire0A8ExtendedP", "shortVersion"]
 - ["s13AnyCollectionV", "reduce"]
 - ["SK", "init"]
 - ["Sz", "init"]
@@ -368,7 +364,6 @@ depends-member:
 - !private ["So6UIViewC", "image"]
 - ["So6UIViewC", "load"]
 - ["s5UInt8V", "init"]
-- ["9Alamofire14URLConvertibleP", "init"]
 - ["SU", "init"]
 - ["s22_AnyCollectionProtocolP", "reduce"]
 - ["s30_CustomPlaygroundQuickLookableP", "init"]
@@ -431,7 +426,6 @@ depends-member:
 - ["So7utsnameV", "machine"]
 depends-nominal:
 - "s18AdditiveArithmeticP"
-- !private "9Alamofire0A8ExtendedP"
 - "s13AnyCollectionV"
 - "SK"
 - "Sz"
@@ -509,7 +503,6 @@ depends-nominal:
 - !private "So23UIUserActivityRestoringP"
 - "So6UIViewC"
 - "s5UInt8V"
-- "9Alamofire14URLConvertibleP"
 - "SU"
 - "s22_AnyCollectionProtocolP"
 - "s30_CustomPlaygroundQuickLookableP"
@@ -564,7 +557,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/UIKit.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/SwiftOnoneSupport.swiftmodule/x86_64.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/prebuilt-modules/Combine.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Modules/Alamofire.swiftmodule/x86_64-apple-ios-simulator.swiftmodule"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_timeval32.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_timeval64.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_ucontext64.h"
@@ -574,7 +566,7 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFUUID.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUUID.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreMIDI.framework/Headers/CoreMIDI.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/AdeonaSDK.h"
+- "/Users/pc/Downloads/AdeonaSDK/AdeonaSDK/AdeonaSDK.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/EAGL.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreFoundation.framework/Headers/CFURL.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSURL.h"
@@ -773,7 +765,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/__wctype.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/xlocale/__wctype.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/runetype.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Headers/Alamofire.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKitCore.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/semaphore.h"
@@ -1707,7 +1698,6 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/NSDataAsset.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIImageAsset.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/_types/_fd_isset.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Headers/Alamofire-Swift.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/sys/wait.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/usr/include/bsm/audit.h"
@@ -1902,12 +1892,11 @@ depends-external:
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIUserActivity.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSUserActivity.h"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSProxy.h"
-- "/Users/pc/Documents/Project/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap"
+- "/Users/pc/Downloads/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/ImageIO.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/OpenGLES.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/IOSurface.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreImage.framework/Modules/module.modulemap"
-- "/Users/pc/Documents/Project/AdeonaSDK/AdeonaSDK/Alamofire.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/QuartzCore.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/Metal.framework/Modules/module.modulemap"
 - "/Applications/Xcode113.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator13.2.sdk/System/Library/Frameworks/CoreVideo.framework/Modules/module.modulemap"

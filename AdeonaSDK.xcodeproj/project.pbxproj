@@ -79,9 +79,9 @@
 		4F1B127725235F7600C586BD /* AdeonaSDK */ = {
 			isa = PBXGroup;
 			children = (
+				4F1B127925235F7600C586BD /* Info.plist */,
 				4F1B127825235F7600C586BD /* AdeonaSDK.h */,
 				4F1B12952523626900C586BD /* extension.swift */,
-				4F1B127925235F7600C586BD /* Info.plist */,
 				4F1B12832523604000C586BD /* AdeonaAdz.swift */,
 				4F1B12862523604000C586BD /* BannerAd.swift */,
 				4F1B12C22523656600C586BD /* PlayerViewController.swift */,

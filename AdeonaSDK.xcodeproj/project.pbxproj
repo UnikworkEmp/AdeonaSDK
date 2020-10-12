@@ -27,7 +27,6 @@
 		4F1B12892523604000C586BD /* PopUpAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B12822523604000C586BD /* PopUpAd.swift */; };
 		4F1B128A2523604000C586BD /* AdeonaAdz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B12832523604000C586BD /* AdeonaAdz.swift */; };
 		4F1B128D2523604000C586BD /* BannerAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B12862523604000C586BD /* BannerAd.swift */; };
-		4F1B128F2523619B00C586BD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1B128E2523619B00C586BD /* Alamofire.framework */; };
 		4F1B12962523626900C586BD /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B12952523626900C586BD /* extension.swift */; };
 		4F1B12982523629800C586BD /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B12972523629800C586BD /* VideoViewController.swift */; };
 		4F1B12C42523656600C586BD /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B12C22523656600C586BD /* PlayerViewController.swift */; };
@@ -43,7 +42,6 @@
 		4F1B12822523604000C586BD /* PopUpAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpAd.swift; sourceTree = "<group>"; };
 		4F1B12832523604000C586BD /* AdeonaAdz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdeonaAdz.swift; sourceTree = "<group>"; };
 		4F1B12862523604000C586BD /* BannerAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerAd.swift; sourceTree = "<group>"; };
-		4F1B128E2523619B00C586BD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Alamofire.framework; sourceTree = "<group>"; };
 		4F1B12952523626900C586BD /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 		4F1B12972523629800C586BD /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		4F1B12C22523656600C586BD /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1B128F2523619B00C586BD /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +79,6 @@
 		4F1B127725235F7600C586BD /* AdeonaSDK */ = {
 			isa = PBXGroup;
 			children = (
-				4F1B128E2523619B00C586BD /* Alamofire.framework */,
 				4F1B127825235F7600C586BD /* AdeonaSDK.h */,
 				4F1B12952523626900C586BD /* extension.swift */,
 				4F1B127925235F7600C586BD /* Info.plist */,

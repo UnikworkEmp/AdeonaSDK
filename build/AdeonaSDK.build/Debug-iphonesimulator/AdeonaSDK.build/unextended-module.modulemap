@@ -1,0 +1,10 @@
+framework module AdeonaSDK {
+  umbrella header "AdeonaSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module AdeonaSDK.__Swift {
+    exclude header "AdeonaSDK-Swift.h"
+}

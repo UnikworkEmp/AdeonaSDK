@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/pc/Library/Developer/Xcode/DerivedData/AdeonaSDK-ayjhdxpwxrgrebarkubrwtjgixuh/Build/Products/Debug-iphonesimulator/AdeonaSDK.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/pc/Documents/Project/AdeonaSDK/build/AdeonaSDK.build/Debug-iphonesimulator/AdeonaSDK.build/unextended-module.modulemap",
+    }]
+  }]
+}

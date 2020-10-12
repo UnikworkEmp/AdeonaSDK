@@ -1,0 +1,11 @@
+framework module AdeonaSDK {
+  umbrella header "AdeonaSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module AdeonaSDK.Swift {
+    header "AdeonaSDK-Swift.h"
+    requires objc
+}
